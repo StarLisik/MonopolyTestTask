@@ -23,7 +23,9 @@ namespace Test
         static void Main()
         {
             Warehouse warehouse = new Warehouse();
-            Console.Write("Enter the production date: ");
+            Console.Write("The following date is a starting point.\n" +
+                "It will be inceased or decreased for each of the pallets.\n" +
+                "Enter the production date for one of the pallets: ");
             DateOnly productionDate;
 
             while (true)
@@ -70,6 +72,10 @@ namespace Test
                 else if (key == "s" || key == "S")
                 {
                     PalletShow(warehouse, groups);
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect choice. Please, choose the command from the list.");
                 }
 
             }
