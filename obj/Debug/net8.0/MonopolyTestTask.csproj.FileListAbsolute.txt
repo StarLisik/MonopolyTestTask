@@ -1,0 +1,15 @@
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\bin\Debug\net8.0\MonopolyTestTask.exe
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\bin\Debug\net8.0\MonopolyTestTask.deps.json
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\bin\Debug\net8.0\MonopolyTestTask.runtimeconfig.json
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\bin\Debug\net8.0\MonopolyTestTask.dll
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\bin\Debug\net8.0\MonopolyTestTask.pdb
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.AssemblyInfoInputs.cache
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.AssemblyInfo.cs
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.csproj.CoreCompileInputs.cache
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.sourcelink.json
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.dll
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\refint\MonopolyTestTask.dll
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.pdb
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\MonopolyTestTask.genruntimeconfig.cache
+C:\MyFolder\Programs\VisualStudioProjects\MonopolyTestTask\obj\Debug\net8.0\ref\MonopolyTestTask.dll
