@@ -23,12 +23,12 @@ namespace Test
         static void Main()
         {
             Warehouse warehouse = new Warehouse();
-            Console.Write("Enter useUntil date in format dd.mm.yyyy: ");
-            DateOnly useUntil;
+            Console.Write("Enter the production date: ");
+            DateOnly productionDate;
 
             while (true)
             {
-                if (DateOnly.TryParse(Console.ReadLine(), out useUntil))
+                if (DateOnly.TryParse(Console.ReadLine(), out productionDate))
                 {
                     break;
                 }
@@ -43,11 +43,11 @@ namespace Test
             warehouse.CreatePallet(2, 34, 355, 2);
             warehouse.CreatePallet(3, 4, 33, 8);
             warehouse.CreatePallet(4, 111, 14, 40);
-            warehouse.pallets[0].AddBox(warehouse.CreateBox(0, 3.5, 2.3, 1.1, 15, useUntil.AddDays(-10)));
-            warehouse.pallets[0].AddBox(warehouse.CreateBox(1, 2, 3, 2, 40, useUntil, useUntil.AddDays(-20)));
-            warehouse.pallets[1].AddBox(warehouse.CreateBox(2, 12, 10, 1, 15.3, useUntil.AddDays(34), useUntil.AddDays(-160)));
-            warehouse.pallets[2].AddBox(warehouse.CreateBox(3, 1, 22.6, 1.1, 150, useUntil.AddDays(-66)));
-            warehouse.pallets[4].AddBox(warehouse.CreateBox(4, 100, 3, 33, 18.2, useUntil.AddDays(12), useUntil.AddDays(-79)));
+            warehouse.pallets[0].AddBox(warehouse.CreateBox(0, 3.5, 2.3, 1.1, 15, productionDate));
+            warehouse.pallets[0].AddBox(warehouse.CreateBox(1, 2, 3, 2, 40, productionDate.AddDays(+32), productionDate.AddDays(-20)));
+            warehouse.pallets[1].AddBox(warehouse.CreateBox(2, 12, 10, 1, 15.3, productionDate.AddDays(34), productionDate.AddDays(-160)));
+            warehouse.pallets[2].AddBox(warehouse.CreateBox(3, 1, 22.6, 1.1, 150, productionDate.AddDays(-66)));
+            warehouse.pallets[4].AddBox(warehouse.CreateBox(4, 100, 3, 33, 18.2, productionDate.AddDays(12), productionDate.AddDays(-79)));
 
             warehouse.pallets = warehouse.pallets.OrderBy(p => p.UseUntil).ToList();
             var groups = warehouse.pallets.GroupBy(p => p.UseUntil);
@@ -78,16 +78,8 @@ namespace Test
 
         static void PalletCreation(Warehouse warehouse)
         {
-            Console.Write("Enter the Id: ");
-
-            int id = int.Parse(Console.ReadLine());
-
-            if (warehouse.pallets.Any(p => p.Id == id))
-            {
-                id = Enumerable.Range(0, warehouse.pallets.Max(p => p.Id) + 2).
+            int id = Enumerable.Range(0, warehouse.pallets.Max(p => p.Id) + 2).
                     Except(warehouse.pallets.Select(p => p.Id)).First();
-                Console.WriteLine($"There is such Id. New Id: {id}");
-            }
 
             Console.Write("\nEnter the width: ");
             double width = double.Parse(Console.ReadLine());
@@ -137,7 +129,7 @@ namespace Test
 
             threePallets = threePallets.OrderBy(p => p.Volume).ToList();
 
-            Console.WriteLine("***** 3 pallets with the most expiration date, ordered by volume *****");
+            Console.WriteLine("***** 3 pallets with the latest expiration date, ordered by volume *****");
             foreach (var pallet in threePallets)
             {
                 Console.WriteLine($"pallet id: {pallet.Id}\n" +
